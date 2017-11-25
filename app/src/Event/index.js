@@ -1,23 +1,6 @@
 import React, {Component} from 'react';
 
 class Event extends Component {
-  constructor(props) {
-    super(props);
-
-    this.silenceView = this.silenceView.bind(this);
-    this.shareView = this.shareView.bind(this);
-  }
-
-  silenceView(e) {
-    e.preventDefault();
-    this.props.pageChange(2);
-  }
-
-  shareView(e) {
-    e.preventDefault();
-    this.props.pageChange(3);
-  }
-
   render() {
     return (
       <div>
@@ -40,13 +23,13 @@ class Event extends Component {
         </div>
 
         <div className="actions">
-          <a href="#" className="join" onClick={this.silenceView}>Join</a>
+          <a href="#" className="join" onClick={this.props.silenceView}>Join</a>
 
           <div className="social">
           </div>
         </div>
 
-        <p className="memoria-link"><a href="#" onClick={this.shareView}>Keep your loved ones memory alive</a></p>
+        <p className="memoria-link"><a href="#" onClick={this.props.shareView}>Keep your loved ones memory alive</a></p>
       </div>
     );
   }

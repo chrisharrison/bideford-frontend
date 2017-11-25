@@ -15,12 +15,35 @@ class App extends Component {
       totalCount: 0,
     };
 
+    this.homeView = this.homeView.bind(this);
+    this.eventView = this.eventView.bind(this);
+    this.silenceView = this.silenceView.bind(this);
+    this.shareView = this.shareView.bind(this);
     this.pageChange = this.pageChange.bind(this);
     this.handleCount = this.handleCount.bind(this);
   }
 
+  homeView(e) {
+    e.preventDefault();
+    this.pageChange(0);
+  }
+
+  eventView(e) {
+    e.preventDefault();
+    this.pageChange(1);
+  }
+
+  silenceView(e) {
+    e.preventDefault();
+    this.pageChange(2);
+  }
+
+  shareView(e) {
+    e.preventDefault();
+    this.pageChange(3);
+  }
+
   pageChange(page) {
-    console.log(page);
     this.setState(
       {
         page: page,
@@ -29,7 +52,6 @@ class App extends Component {
   }
 
   handleCount(count) {
-    console.log(count);
     this.setState(
       {
         totalCount: count,
@@ -39,11 +61,11 @@ class App extends Component {
 
   render() {
     const home = (
-      <Home pageChange={this.pageChange} />
+      <Home eventView={this.eventView} pageChange={this.pageChange} />
     );
 
     const event = (
-      <Event pageChange={this.pageChange} />
+      <Event silenceView={this.silenceView} shareView={this.shareView} pageChange={this.pageChange} />
     );
 
     const silence = (
@@ -51,7 +73,11 @@ class App extends Component {
     );
 
     const share = (
-      <Share pageChange={this.pageChange} />
+      <Share homeView={this.homeView} pageChange={this.pageChange} />
+    );
+
+    const notify = (
+      <Notify homeView={this.homeView} pageChange={this.pageChange} />
     );
 
     let page;
