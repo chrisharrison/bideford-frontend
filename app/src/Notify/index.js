@@ -10,6 +10,9 @@ class Notify extends Component {
 
         <div id="main-content">
           <h2>Notify</h2>
+          <p>
+            <a href="#" onClick={this.props.homeView}>Back To Home</a>
+          </p>
         </div>
       </div>
     );
