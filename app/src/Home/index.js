@@ -5,8 +5,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div id="header">
-          <h1>Bideford</h1>
+        <div id="header" class="o-header">
+          <img src="/img/logo.svg" class="o-branding__logo" />
         </div>
 
         <div className="header-links">
@@ -15,6 +15,8 @@ class Home extends Component {
             <li>Event 2</li>
             <li>Event 3</li>
           </ul>
+          <div>100,473</div>
+          <div>People currently observing a minutes silence</div>
         </div>
 
         <div className="content">
