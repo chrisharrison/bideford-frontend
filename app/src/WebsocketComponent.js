@@ -8,7 +8,9 @@ class WebsocketComponent extends Component {
 
   handleData(data) {
     let result = JSON.parse(data);
-    console.log(result);
+    if (result.totalCount) {
+      this.props.handleCount(result.totalCount);
+    }
   }
 
   render() {
