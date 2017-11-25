@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import Websocket from 'react-websocket';
 
 class WebsocketComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleData(data) {
     let result = JSON.parse(data);
     if (result.totalCount) {
@@ -15,7 +11,7 @@ class WebsocketComponent extends Component {
 
   render() {
     return (
-      <Websocket url='ws://15e63168.ngrok.io' onMessage={this.handleData.bind(this)}/>
+      <Websocket url={this.props.socketUrl} onMessage={this.handleData.bind(this)}/>
     );
   }
 }

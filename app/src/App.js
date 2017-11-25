@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Count from './Count.js';
 import WebsocketComponent from './WebsocketComponent.js';
-import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +12,8 @@ class App extends Component {
 
     this.handleCount = this.handleCount.bind(this);
   }
+
+  socketUrl = 'ws://15e63168.ngrok.io';
 
   handleCount(count) {
     this.setState(
@@ -27,7 +28,7 @@ class App extends Component {
       <div className="c-breathe__inner" id="root">
         <Count count={this.state.totalCount}/>
 
-        <WebsocketComponent handleCount={this.handleCount} />
+        <WebsocketComponent socketUrl={this.socketUrl} handleCount={this.handleCount} />
 
         <div className="pulser"></div>
       </div>
