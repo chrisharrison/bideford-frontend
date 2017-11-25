@@ -98,54 +98,79 @@ textarea {
    ========================================================================== */
 
 
-.c__breathe {
-      animation: colorchange 50s; /* animation-name followed by duration in seconds*/
-         /* you could also use milliseconds (ms) or something like 2.5s */
-      -webkit-animation: colorchange 50s; /* Chrome and Safari */
-      text-align: center;
-    }
+.c-breathe {
+  animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+     /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 50s; /* Chrome and Safari */
+  text-align: center;
+}
 
-    @keyframes colorchange
-    {
-      0%   {background: red;}
-      25%  {background: yellow;}
-      50%  {background: blue;}
-      75%  {background: green;}
-      100% {background: red;}
-    }
+@keyframes colorchange
+{
+  0%   {background: rgb(22,27,33);}
+  25%  {background: rgb(36,40,47);}
+  50%  {background: rgb(23,45,77);}
+  75%  {background: rgb(23,35,53);}
+  100%  {background: rgb(34,32,67);}
 
-    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-    {
-      0%   {background: red;}
-      25%  {background: yellow;}
-      50%  {background: blue;}
-      75%  {background: green;}
-      100% {background: red;}
-    }
+}
 
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: rgb(22,27,33);}
+  25%  {background: rgb(36,40,47);}
+  50%  {background: rgb(23,45,77);}
+  75%  {background: rgb(23,35,53);}
+  100%  {background: rgb(34,32,67);}
+}
+
+.c-breathe__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
 
 .pulser {
   margin:0 auto;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: #cca92c;
+  background: rgba(226,100,116, 1);
   cursor: pointer;
-  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-  animation: pulse 12s infinite;
+  box-shadow: 0 24px 24px rgba(0,0,0, 1);
+  animation: pulse 5s infinite;
 }
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    -webkit-box-shadow: 0 0 24px 24px rgba(226,100,116, 1);
   }
-  70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  10% {
+    -webkit-box-shadow: 0 0 30px 24px rgba(226,100,116, 1);
+  }
+  20% {
+    -webkit-box-shadow: 0 0 36px 24px rgba(226,100,116, 1);
+  }
+  40% {
+    -webkit-box-shadow: 0 0 48px 24px rgba(226,100,116, 1);
+  }
+  50% {
+     -webkit-box-shadow: 0 0 54px 24px rgba(226,100,116, 1);
+  }
+  60% {
+    -webkit-box-shadow: 0 0 48px 24px rgba(226,100,116, 1);
+  }
+  80% {
+    -webkit-box-shadow: 0 0 36px 24px rgba(226,100,116, 1);
+  }
+  90% {
+     -webkit-box-shadow: 0 0 30px 24px rgba(226,100,116, 1);
   }
   100% {
-      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    -webkit-box-shadow: 0 0 24px 24px rgba(226,100,116, 1);
   }
-}
+}/*
 @keyframes pulse {
   0% {
     -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
@@ -159,8 +184,17 @@ textarea {
       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
-}
+}*/
 
+
+.o-viewer-count {
+    color: #fff;
+    font-family: sans-serif;
+    size: 18px;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+}
 
 /* ==========================================================================
    Helper classes
