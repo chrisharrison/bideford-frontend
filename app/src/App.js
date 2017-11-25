@@ -46,7 +46,10 @@ class App extends Component {
     }
 
     return (
-      <div id={"root"}>
+      <div>
+        <div id="header">
+          <h1>Bideford</h1>
+        </div>
         {page}
       </div>
     );
