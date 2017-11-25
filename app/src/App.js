@@ -26,7 +26,7 @@ class App extends Component {
 
     let pageNumber = 0;
     let page;
-    
+
     switch(pageNumber) {
       case 0:
         page = home;
@@ -47,8 +47,8 @@ class App extends Component {
 
     return (
       <div>
-        <div id="header">
-          <h1>Bideford</h1>
+        <div id="header" class="o-branding">
+          <img src="/img/logo.svg" class="o-branding__logo" />
         </div>
         {page}
       </div>

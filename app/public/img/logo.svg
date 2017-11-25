@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="29px" viewBox="0 0 112 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="9" cy="13" r="9"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(3.000000, 1.000000)">
+            <text id="Bideford" font-family="Comfortaa-Bold, Comfortaa" font-size="18" font-weight="bold" fill="#FFFFFF">
+                <tspan x="27" y="20">Bideford</tspan>
+            </text>
+            <g id="Oval">
+                <use fill-opacity="0.854676178" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <circle stroke-opacity="0.589532382" stroke="#FFFFFF" stroke-width="4" cx="9" cy="13" r="11"></circle>
+                <use stroke="#C94E5D" stroke-width="5" xlink:href="#path-1"></use>
+                <use stroke-opacity="0.444519928" stroke="#F7E5E7" stroke-width="2" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
