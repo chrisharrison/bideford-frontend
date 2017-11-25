@@ -23,12 +23,14 @@ class Silence extends Component {
 
   render() {
     return (
-      <div className="c-breathe__inner">
-        <Count count={this.state.totalCount}/>
+      <div classname="c-breathe">
+        <div className="c-breathe__inner silence">
+          <Count count={this.state.totalCount}/>
 
-        <WebsocketComponent socketUrl={this.props.socketUrl} handleCount={this.handleCount} />
+          <WebsocketComponent socketUrl={this.props.socketUrl} handleCount={this.handleCount} />
 
-        <div className="pulser"></div>
+          <div className="pulser"></div>
+        </div>
       </div>
     );
   }

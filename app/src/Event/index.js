@@ -25,9 +25,7 @@ class Event extends Component {
           </div>
         </div>
 
-        <div className="bottom-link">
-
-        </div>
+        <p class="memoria-link"><a href="#">Keep your loved ones memory alive</a></p>
       </div>
     );
   }
