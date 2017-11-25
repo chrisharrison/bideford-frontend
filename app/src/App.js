@@ -7,27 +7,56 @@ import Share from './Share/index.js';
 class App extends Component {
   socketUrl = 'ws://15e63168.ngrok.io';
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: 0,
+      totalCount: 0,
+    };
+
+    this.pageChange = this.pageChange.bind(this);
+    this.handleCount = this.handleCount.bind(this);
+  }
+
+  pageChange(page) {
+    console.log(page);
+    this.setState(
+      {
+        page: page,
+      }
+    )
+  }
+
+  handleCount(count) {
+    console.log(count);
+    this.setState(
+      {
+        totalCount: count,
+      }
+    )
+  }
+
   render() {
     const home = (
-      <Home />
+      <Home pageChange={this.pageChange} />
     );
 
     const event = (
-      <Event />
+      <Event pageChange={this.pageChange} />
     );
 
     const silence = (
-      <Silence socketUrl={this.socketUrl} handleCount={this.handleCount} />
+      <Silence pageChange={this.pageChange} socketUrl={this.socketUrl} totalCount={this.state.totalCount} handleCount={this.handleCount} />
     );
 
     const share = (
-      <Share />
+      <Share pageChange={this.pageChange} />
     );
 
-    let pageNumber = 0;
     let page;
     
-    switch(pageNumber) {
+    switch(this.state.page) {
       case 0:
         page = home;
         break;
@@ -47,9 +76,6 @@ class App extends Component {
 
     return (
       <div>
-        <div id="header">
-          <h1>Bideford</h1>
-        </div>
         {page}
       </div>
     );

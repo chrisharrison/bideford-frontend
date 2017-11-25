@@ -3,31 +3,13 @@ import Count from './Count.js';
 import WebsocketComponent from './WebsocketComponent.js';
 
 class Silence extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      totalCount: 0,
-    };
-
-    this.handleCount = this.handleCount.bind(this);
-  }
-
-  handleCount(count) {
-    this.setState(
-      {
-        totalCount: count,
-      }
-    )
-  }
-
   render() {
     return (
-      <div classname="c-breathe">
-        <div className="c-breathe__inner silence">
-          <Count count={this.state.totalCount}/>
+      <div className="c-breathe" style={{backgroundColor: '#222'}}>
+        <div className="c-breathe__inner">
+          <Count count={this.props.totalCount}/>
 
-          <WebsocketComponent socketUrl={this.props.socketUrl} handleCount={this.handleCount} />
+          <WebsocketComponent socketUrl={this.props.socketUrl} handleCount={this.props.handleCount} />
 
           <div className="pulser"></div>
         </div>

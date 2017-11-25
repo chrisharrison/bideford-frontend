@@ -1,9 +1,30 @@
 import React, {Component} from 'react';
 
 class Event extends Component {
+  constructor(props) {
+    super(props);
+
+    this.silenceView = this.silenceView.bind(this);
+    this.shareView = this.shareView.bind(this);
+  }
+
+  silenceView(e) {
+    e.preventDefault();
+    this.props.pageChange(2);
+  }
+
+  shareView(e) {
+    e.preventDefault();
+    this.props.pageChange(3);
+  }
+
   render() {
     return (
       <div>
+        <div id="header">
+          <h1>Bideford</h1>
+        </div>
+
         <div className="header-info">
           <h1>David Bowie</h1>
           <p className="event-date">Wednesday, 10 January</p>
@@ -19,13 +40,13 @@ class Event extends Component {
         </div>
 
         <div className="actions">
-          <a href="#" className="join">Join</a>
+          <a href="#" className="join" onClick={this.silenceView}>Join</a>
 
           <div className="social">
           </div>
         </div>
 
-        <p class="memoria-link"><a href="#">Keep your loved ones memory alive</a></p>
+        <p className="memoria-link"><a href="#" onClick={this.shareView}>Keep your loved ones memory alive</a></p>
       </div>
     );
   }

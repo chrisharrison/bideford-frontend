@@ -5,7 +5,7 @@ class Count extends Component {
     console.log('Viewers: ' + this.props.count);
 
     return (
-      <div class="o-viewer-count">
+      <div className="o-viewer-count">
         {this.props.count}
       </div>
     );
