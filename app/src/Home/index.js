@@ -10,7 +10,7 @@ class Home extends Component {
         </div>
 
         <div className="header-links">
-          <ul>
+          <ul class="c-header-carousel">
             <li>Event 1</li>
             <li>Event 2</li>
             <li>Event 3</li>
