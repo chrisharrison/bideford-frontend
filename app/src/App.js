@@ -1,36 +1,53 @@
 import React, {Component} from 'react';
-import Count from './Count.js';
-import WebsocketComponent from './WebsocketComponent.js';
+import Home from './Home/index.js';
+import Event from './Event/index.js';
+import Silence from './Silence/index.js';
+import Share from './Share/index.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      totalCount: 0,
-    };
-
-    this.handleCount = this.handleCount.bind(this);
-  }
-
   socketUrl = 'ws://15e63168.ngrok.io';
 
-  handleCount(count) {
-    this.setState(
-      {
-        totalCount: count,
-      }
-    )
-  }
-
   render() {
+    const home = (
+      <Home />
+    );
+
+    const event = (
+      <Event />
+    );
+
+    const silence = (
+      <Silence socketUrl={this.socketUrl} handleCount={this.handleCount} />
+    );
+
+    const share = (
+      <Share />
+    );
+
+    let pageNumber = 0;
+    let page;
+    
+    switch(pageNumber) {
+      case 0:
+        page = home;
+        break;
+      case 1:
+        page = event;
+        break;
+      case 2:
+        page = silence;
+        break;
+      case 3:
+        page = share;
+        break;
+      default:
+        // panic!!
+        break;
+    }
+
     return (
-      <div className="c-breathe__inner" id="root">
-        <Count count={this.state.totalCount}/>
-
-        <WebsocketComponent socketUrl={this.socketUrl} handleCount={this.handleCount} />
-
-        <div className="pulser"></div>
+      <div id={"root"}>
+        {page}
       </div>
     );
   }
