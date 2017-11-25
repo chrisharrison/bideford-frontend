@@ -28,7 +28,7 @@ class Home extends Component {
           <h2>Upcoming remembrence events</h2>
         </div>
 
-        <ListLinks pageChange={this.props.pageChange} />
+        <ListLinks eventView={this.props.eventView} />
       </div>
     );
   }

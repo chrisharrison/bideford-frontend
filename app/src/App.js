@@ -3,6 +3,7 @@ import Home from './Home/index.js';
 import Event from './Event/index.js';
 import Silence from './Silence/index.js';
 import Share from './Share/index.js';
+import Notify from './Notify/index.js';
 
 class App extends Component {
   socketUrl = 'ws://15e63168.ngrok.io';
@@ -15,12 +16,41 @@ class App extends Component {
       totalCount: 0,
     };
 
+    this.homeView = this.homeView.bind(this);
+    this.eventView = this.eventView.bind(this);
+    this.silenceView = this.silenceView.bind(this);
+    this.shareView = this.shareView.bind(this);
+    this.notifyView = this.notifyView.bind(this);
     this.pageChange = this.pageChange.bind(this);
     this.handleCount = this.handleCount.bind(this);
   }
 
+  homeView(e) {
+    e.preventDefault();
+    this.pageChange(0);
+  }
+
+  eventView(e) {
+    e.preventDefault();
+    this.pageChange(1);
+  }
+
+  silenceView(e) {
+    e.preventDefault();
+    this.pageChange(2);
+  }
+
+  shareView(e) {
+    e.preventDefault();
+    this.pageChange(3);
+  }
+
+  notifyView(e) {
+    e.preventDefault();
+    this.pageChange(4);
+  }
+
   pageChange(page) {
-    console.log(page);
     this.setState(
       {
         page: page,
@@ -29,7 +59,6 @@ class App extends Component {
   }
 
   handleCount(count) {
-    console.log(count);
     this.setState(
       {
         totalCount: count,
@@ -39,11 +68,11 @@ class App extends Component {
 
   render() {
     const home = (
-      <Home pageChange={this.pageChange} />
+      <Home eventView={this.eventView} pageChange={this.pageChange} />
     );
 
     const event = (
-      <Event pageChange={this.pageChange} />
+      <Event silenceView={this.silenceView} notifyView={this.notifyView} shareView={this.shareView} pageChange={this.pageChange} />
     );
 
     const silence = (
@@ -51,7 +80,11 @@ class App extends Component {
     );
 
     const share = (
-      <Share pageChange={this.pageChange} />
+      <Share homeView={this.homeView} pageChange={this.pageChange} />
+    );
+
+    const notify = (
+      <Notify homeView={this.homeView} pageChange={this.pageChange} />
     );
 
     let page;
@@ -68,6 +101,9 @@ class App extends Component {
         break;
       case 3:
         page = share;
+        break;
+      case 4:
+        page = notify;
         break;
       default:
         // panic!!

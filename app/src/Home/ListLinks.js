@@ -1,17 +1,6 @@
 import React, {Component} from 'react';
 
 class ListLinks extends Component {
-  constructor(props) {
-    super(props);
-
-    this.eventView = this.eventView.bind(this);
-  }
-
-  eventView(e) {
-    e.preventDefault();
-    this.props.pageChange(1);
-  }
-
   render() {
     const pageChange = this.props.pageChange;
     let eventLinks = [];
@@ -19,7 +8,7 @@ class ListLinks extends Component {
     for(let i = 0; i < 6; i++) {
       eventLinks.push(
         <li key={'event' + i}>
-          <a href="#" onClick={this.eventView}>
+          <a href="#" onClick={this.props.eventView}>
             Event {i}
           </a>
         </li>

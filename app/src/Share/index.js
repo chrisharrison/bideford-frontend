@@ -19,6 +19,9 @@ class Share extends Component {
           <p>
             <a href="/img/logo/apple-download.png"></a>
           </p>
+          <p>
+            <a href="#" onClick={this.props.homeView}>Back To Home</a>
+          </p>
         </div>
       </div>
     );
