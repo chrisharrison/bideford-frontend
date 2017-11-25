@@ -3,6 +3,7 @@ import Home from './Home/index.js';
 import Event from './Event/index.js';
 import Silence from './Silence/index.js';
 import Share from './Share/index.js';
+import Notify from './Notify/index.js';
 
 class App extends Component {
   socketUrl = 'ws://15e63168.ngrok.io';
@@ -19,6 +20,7 @@ class App extends Component {
     this.eventView = this.eventView.bind(this);
     this.silenceView = this.silenceView.bind(this);
     this.shareView = this.shareView.bind(this);
+    this.notifyView = this.notifyView.bind(this);
     this.pageChange = this.pageChange.bind(this);
     this.handleCount = this.handleCount.bind(this);
   }
@@ -43,6 +45,11 @@ class App extends Component {
     this.pageChange(3);
   }
 
+  notifyView(e) {
+    e.preventDefault();
+    this.pageChange(4);
+  }
+
   pageChange(page) {
     this.setState(
       {
@@ -65,7 +72,7 @@ class App extends Component {
     );
 
     const event = (
-      <Event silenceView={this.silenceView} shareView={this.shareView} pageChange={this.pageChange} />
+      <Event silenceView={this.silenceView} notifyView={this.notifyView} shareView={this.shareView} pageChange={this.pageChange} />
     );
 
     const silence = (
@@ -94,6 +101,9 @@ class App extends Component {
         break;
       case 3:
         page = share;
+        break;
+      case 4:
+        page = notify;
         break;
       default:
         // panic!!

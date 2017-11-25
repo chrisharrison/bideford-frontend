@@ -24,6 +24,7 @@ class Event extends Component {
 
         <div className="actions">
           <a href="#" className="join" onClick={this.props.silenceView}>Join</a>
+          <a href="#" className="join" onClick={this.props.notifyView}>Notify Me</a>
 
           <div className="social">
           </div>
