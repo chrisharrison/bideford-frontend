@@ -1,18 +1,53 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Home from './Home/index.js';
+import Event from './Event/index.js';
+import Silence from './Silence/index.js';
+import Share from './Share/index.js';
 
 class App extends Component {
+  socketUrl = 'ws://15e63168.ngrok.io';
+
   render() {
+    const home = (
+      <Home />
+    );
+
+    const event = (
+      <Event />
+    );
+
+    const silence = (
+      <Silence socketUrl={this.socketUrl} handleCount={this.handleCount} />
+    );
+
+    const share = (
+      <Share />
+    );
+
+    let pageNumber = 0;
+    let page;
+    
+    switch(pageNumber) {
+      case 0:
+        page = home;
+        break;
+      case 1:
+        page = event;
+        break;
+      case 2:
+        page = silence;
+        break;
+      case 3:
+        page = share;
+        break;
+      default:
+        // panic!!
+        break;
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id={"root"}>
+        {page}
       </div>
     );
   }
