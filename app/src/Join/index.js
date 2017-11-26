@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Event extends Component {
+class Join extends Component {
   render() {
     return (
       <div>
@@ -27,14 +27,14 @@ class Event extends Component {
         </div>
 
         <div className="card card-yellow remembrance-actions">
-          <div className="heading">Remembrance starts tomorrow at 2pm</div>
+          <div className="heading">Remembrance starts in 30 seconds</div>
           <a href="#" className="primaryButton" onClick={this.props.notifyView}>
-          <img src="/img/button-icon.svg" className="icon"/> Notify me before the start</a>
+          <img src="/img/button-icon.svg" className="icon"/> Join</a>
         </div>
 
 
         <div className="actions">
-          <a href="#" className="join" onClick={this.props.silenceView}>Join</a>
+          {/*<a href="#" className="join" onClick={this.props.silenceView}>Join</a> */}
 
 
           <div className="social">
@@ -57,4 +57,4 @@ class Event extends Component {
   }
 }
 
-export default Event;
+export default Join;

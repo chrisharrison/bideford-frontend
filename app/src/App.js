@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Home from './Home/index.js';
 import Event from './Event/index.js';
+import Join from './Join/index.js';
 import Silence from './Silence/index.js';
 import Share from './Share/index.js';
 import Notify from './Notify/index.js';
@@ -18,6 +19,7 @@ class App extends Component {
 
     this.homeView = this.homeView.bind(this);
     this.eventView = this.eventView.bind(this);
+    this.joinView = this.joinView.bind(this);
     this.silenceView = this.silenceView.bind(this);
     this.shareView = this.shareView.bind(this);
     this.notifyView = this.notifyView.bind(this);
@@ -50,6 +52,11 @@ class App extends Component {
     this.pageChange(4);
   }
 
+  joinView(e) {
+    e.preventDefault();
+    this.pageChange(5);
+  }
+
   pageChange(page) {
     this.setState(
       {
@@ -75,6 +82,10 @@ class App extends Component {
       <Event silenceView={this.silenceView} notifyView={this.notifyView} shareView={this.shareView} pageChange={this.pageChange} />
     );
 
+    const join = (
+      <Event silenceView={this.silenceView} pageChange={this.pageChange} />
+    );
+
     const silence = (
       <Silence pageChange={this.pageChange} socketUrl={this.socketUrl} totalCount={this.state.totalCount} handleCount={this.handleCount} />
     );
@@ -84,7 +95,7 @@ class App extends Component {
     );
 
     const notify = (
-      <Notify homeView={this.homeView} pageChange={this.pageChange} />
+      <Notify joinView={this.joinView} pageChange={this.pageChange} />
     );
 
     let page;
@@ -105,16 +116,17 @@ class App extends Component {
       case 4:
         page = notify;
         break;
+      case 5:
+        page = join;
+        break;
       default:
         // panic!!
         break;
     }
 
     return (
-      <div>
-        <div id="header" class="o-branding">
-          <img src="/img/logo.svg" class="o-branding__logo" />
-        </div>
+      <div className="bideford-app">
+
         {page}
       </div>
     );
