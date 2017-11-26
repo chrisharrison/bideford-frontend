@@ -5,6 +5,7 @@ import Join from './Join/index.js';
 import Silence from './Silence/index.js';
 import Share from './Share/index.js';
 import Notify from './Notify/index.js';
+import Memoria from './Memoria/index.js';
 
 class App extends Component {
   socketUrl = 'ws://15e63168.ngrok.io';
@@ -25,6 +26,7 @@ class App extends Component {
     this.notifyView = this.notifyView.bind(this);
     this.pageChange = this.pageChange.bind(this);
     this.handleCount = this.handleCount.bind(this);
+    this.memoriaView = this.memoriaView.bind(this);
   }
 
   homeView(e) {
@@ -57,6 +59,11 @@ class App extends Component {
     this.pageChange(5);
   }
 
+  memoriaView(e) {
+    e.preventDefault();
+    this.pageChange(6);
+  }
+
   pageChange(page) {
     this.setState(
       {
@@ -83,7 +90,7 @@ class App extends Component {
     );
 
     const join = (
-      <Event silenceView={this.silenceView} pageChange={this.pageChange} />
+      <Join silenceView={this.silenceView} pageChange={this.pageChange} />
     );
 
     const silence = (
@@ -96,6 +103,10 @@ class App extends Component {
 
     const notify = (
       <Notify joinView={this.joinView} pageChange={this.pageChange} />
+    );
+
+    const memoria = (
+      <Memoria memoriaView={this.memoriaView} pageChange={this.pageChange} />
     );
 
     let page;
@@ -118,6 +129,9 @@ class App extends Component {
         break;
       case 5:
         page = join;
+        break;
+      case 6:
+        page = memoria;
         break;
       default:
         // panic!!
