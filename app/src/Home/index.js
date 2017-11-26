@@ -34,7 +34,7 @@ class Home extends Component {
 
           <div className="event-search">
             <div className="card">
-              <label htmlFor="event-search" className="o-search__label">Discover remembrence events</label>
+              <label htmlFor="event-search" className="o-search__label">Discover remembrance events</label>
               <div className="o-search">
                 <input type="text" name="event-search" id="event-search" className="o-search__input" placeholder="Search" />
 
