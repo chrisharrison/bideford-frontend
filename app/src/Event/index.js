@@ -34,9 +34,6 @@ class Event extends Component {
 
 
         <div className="actions">
-          <a href="#" className="join" onClick={this.props.silenceView}>Join</a>
-
-
           <div className="social">
             <p><b>Invite your friends to join you</b></p>
             <div className="pushSides">
@@ -45,7 +42,7 @@ class Event extends Component {
           </div>
         </div>
 
-        <a href="#" onClick={this.props.shareView} className="memoria-link">
+        <a href="#" onClick={this.props.memoriaView} className="memoria-link">
           <img src="/img/memoria-tree-white.svg" />
           <span className="label">Keep your loved ones memory alive</span>
           <div className="chevron">
