@@ -28,15 +28,12 @@ class Join extends Component {
 
         <div className="card card-yellow remembrance-actions">
           <div className="heading">Remembrance starts in 30 seconds</div>
-          <a href="#" className="primaryButton" onClick={this.props.notifyView}>
+          <a href="#" className="primaryButton" onClick={this.props.silenceView}>
           <img src="/img/button-icon.svg" className="icon"/> Join</a>
         </div>
 
 
         <div className="actions">
-          {/*<a href="#" className="join" onClick={this.props.silenceView}>Join</a> */}
-
-
           <div className="social">
             <p><b>Invite your friends to join you</b></p>
             <div className="pushSides">
