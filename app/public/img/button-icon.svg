@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>Slice 8</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <circle id="path-1" cx="13" cy="13" r="9"></circle>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Oval">
-            <use fill-opacity="0.854676178" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
-            <circle stroke-opacity="0.589532382" stroke="#FFFFFF" stroke-width="4" cx="13" cy="13" r="11"></circle>
-            <use stroke="#C94E5D" stroke-width="5" xlink:href="#path-1"></use>
-            <use stroke-opacity="0.444519928" stroke="#F7E5E7" stroke-width="2" xlink:href="#path-1"></use>
-        </g>
-    </g>
-</svg>
+<svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Slice 8</title><defs><circle id="a" cx="13" cy="13" r="9"/></defs><g fill="none" fill-rule="evenodd"><use fill-opacity=".855" fill="#FFF" xlink:href="#a"/><circle stroke-opacity=".59" stroke="#FFF" stroke-width="4" cx="13" cy="13" r="11"/><use stroke="#C94E5D" stroke-width="5" xlink:href="#a"/><use stroke-opacity=".445" stroke="#F7E5E7" stroke-width="2" xlink:href="#a"/></g></svg>
