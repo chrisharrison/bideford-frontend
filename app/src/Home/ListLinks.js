@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 
 class ListLinks extends Component {
   render() {
-    const pageChange = this.props.pageChange;
-
     return (
       <div className="list-links">
         <a href="#" className="hoverState" onClick={this.props.eventView}>
