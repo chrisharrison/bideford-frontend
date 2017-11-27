@@ -46,7 +46,7 @@ class App extends Component {
 
   shareView(e) {
     e.preventDefault();
-    this.pageChange(3);
+    this.pageChange(6);
   }
 
   notifyView(e) {

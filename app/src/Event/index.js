@@ -42,7 +42,7 @@ class Event extends Component {
           </div>
         </div>
 
-        <a href="#" onClick={this.props.memoriaView} className="memoria-link">
+        <a href="#" onClick={this.props.shareView} className="memoria-link">
           <img src="/img/memoria-tree-white.svg" />
           <span className="label">Keep your loved ones memory alive</span>
           <div className="chevron">
