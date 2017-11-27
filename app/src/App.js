@@ -5,15 +5,24 @@ import Join from './Join/index.js';
 import Silence from './Silence/index.js';
 import Notify from './Notify/index.js';
 import Memoria from './Memoria/index.js';
+import ReactQueryParams from 'react-query-params';
 
-class App extends Component {
+class App extends ReactQueryParams {
   socketUrl = 'ws://46.101.42.221:8999';
 
   constructor(props) {
     super(props);
 
+    let page = 0;
+    if( this.queryParams.page ) {
+      page = parseInt(this.queryParams.page);
+      if( ! page || page < 0 || page > 5 ) {
+        page = 0;
+      }
+    }
+
     this.state = {
-      page: 0,
+      page: page,
       totalCount: 0,
     };
 
