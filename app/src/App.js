@@ -3,7 +3,6 @@ import Home from './Home/index.js';
 import Event from './Event/index.js';
 import Join from './Join/index.js';
 import Silence from './Silence/index.js';
-import Share from './Share/index.js';
 import Notify from './Notify/index.js';
 import Memoria from './Memoria/index.js';
 
@@ -22,7 +21,6 @@ class App extends Component {
     this.eventView = this.eventView.bind(this);
     this.joinView = this.joinView.bind(this);
     this.silenceView = this.silenceView.bind(this);
-    this.shareView = this.shareView.bind(this);
     this.notifyView = this.notifyView.bind(this);
     this.pageChange = this.pageChange.bind(this);
     this.handleCount = this.handleCount.bind(this);
@@ -44,9 +42,9 @@ class App extends Component {
     this.pageChange(2);
   }
 
-  shareView(e) {
+  memoriaView(e) {
     e.preventDefault();
-    this.pageChange(6);
+    this.pageChange(3);
   }
 
   notifyView(e) {
@@ -57,11 +55,6 @@ class App extends Component {
   joinView(e) {
     e.preventDefault();
     this.pageChange(5);
-  }
-
-  memoriaView(e) {
-    e.preventDefault();
-    this.pageChange(6);
   }
 
   pageChange(page) {
@@ -82,31 +75,27 @@ class App extends Component {
 
   render() {
     const home = (
-      <Home eventView={this.eventView} pageChange={this.pageChange} />
+      <Home eventView={this.eventView} />
     );
 
     const event = (
-      <Event silenceView={this.silenceView} notifyView={this.notifyView} shareView={this.shareView} pageChange={this.pageChange} />
+      <Event silenceView={this.silenceView} notifyView={this.notifyView} memoriaView={this.memoriaView} />
     );
 
     const join = (
-      <Join silenceView={this.silenceView} pageChange={this.pageChange} />
-    );
-
-    const silence = (
-      <Silence pageChange={this.pageChange} socketUrl={this.socketUrl} totalCount={this.state.totalCount} handleCount={this.handleCount} />
-    );
-
-    const share = (
-      <Share homeView={this.homeView} pageChange={this.pageChange} />
-    );
-
-    const notify = (
-      <Notify joinView={this.joinView} pageChange={this.pageChange} />
+      <Join silenceView={this.silenceView} memoriaView={this.memoriaView} />
     );
 
     const memoria = (
-      <Memoria homeView={this.homeView} memoriaView={this.memoriaView} pageChange={this.pageChange} />
+      <Memoria homeView={this.homeView} memoriaView={this.memoriaView} />
+    );
+
+    const notify = (
+      <Notify joinView={this.joinView} />
+    );
+
+    const silence = (
+      <Silence socketUrl={this.socketUrl} totalCount={this.state.totalCount} handleCount={this.handleCount} />
     );
 
     let page;
@@ -122,16 +111,13 @@ class App extends Component {
         page = silence;
         break;
       case 3:
-        page = share;
+        page = memoria;
         break;
       case 4:
         page = notify;
         break;
       case 5:
         page = join;
-        break;
-      case 6:
-        page = memoria;
         break;
       default:
         // panic!!
