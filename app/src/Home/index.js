@@ -15,7 +15,7 @@ class Home extends Component {
               <img src="/img/grenfelltower.png" alt="" />
             </li>
             <li className="c-header-carousel__item">
-              <img src="/img/pauldaniels.png" alt="" />
+              <img src="/img/rogermoore.png" alt="" />
             </li>
             <li className="c-header-carousel__item">
               <img src="/img/poppies.png" alt="" />
