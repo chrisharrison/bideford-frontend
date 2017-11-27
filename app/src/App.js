@@ -96,7 +96,7 @@ class App extends ReactQueryParams {
     );
 
     const memoria = (
-      <Memoria memoriaView={this.memoriaView} />
+      <Memoria homeView={this.homeView} memoriaView={this.memoriaView} />
     );
 
     const notify = (
