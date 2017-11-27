@@ -6,7 +6,7 @@ class Memoria extends Component {
       <div>
 
         <div id="header" class="o-branding">
-          <img src="/img/logo.svg" class="o-branding__logo" />
+          <img src="/img/logo.svg" class="o-branding__logo" onClick={this.props.homeView}/>
         </div>
         <div className="memoria-splash">
           <div className="heading">

@@ -106,7 +106,7 @@ class App extends Component {
     );
 
     const memoria = (
-      <Memoria memoriaView={this.memoriaView} pageChange={this.pageChange} />
+      <Memoria homeView={this.homeView} memoriaView={this.memoriaView} pageChange={this.pageChange} />
     );
 
     let page;
