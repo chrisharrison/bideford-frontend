@@ -8,7 +8,7 @@ import Notify from './Notify/index.js';
 import Memoria from './Memoria/index.js';
 
 class App extends Component {
-  socketUrl = 'ws://15e63168.ngrok.io';
+  socketUrl = 'ws://46.101.42.221';
 
   constructor(props) {
     super(props);
