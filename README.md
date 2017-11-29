@@ -6,4 +6,8 @@ To get the app up and running
  - run `yarn install`
  - run `yarn start`
 
-If you need to change the websocket URL, update line 5 in **App.js**. 
+If you need to change the websocket URL, update line 5 in **App.js**.
+
+## Acknowledgements ##
+
+&copy; Copyright 2017 The Bideford Team Members (Adam Ainsworth, John Cowen, Chris Harrison, Gary Moyle, Sangheethan Subramaniam). All rights reserved.
